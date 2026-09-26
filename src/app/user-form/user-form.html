@@ -1,0 +1,110 @@
+<mat-card class="form-card">
+
+  <h1>User Registration Form</h1>
+
+  <form #userForm="ngForm" (ngSubmit)="submitForm(userForm)">
+
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+
+      <input
+        matInput
+        type="text"
+        name="firstName"
+        [(ngModel)]="firstName"
+        required
+        #firstNameInput="ngModel"
+      >
+
+      @if (firstNameInput.invalid && firstNameInput.touched) {
+        <mat-error>
+          First Name is required
+        </mat-error>
+      }
+
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+
+      <input
+        matInput
+        type="text"
+        name="lastName"
+        [(ngModel)]="lastName"
+        required
+        #lastNameInput="ngModel"
+      >
+
+      @if (lastNameInput.invalid && lastNameInput.touched) {
+        <mat-error>
+          Last Name is required
+        </mat-error>
+      }
+
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+
+      <input
+        matInput
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+        email
+        #emailInput="ngModel"
+      >
+
+      @if (emailInput.errors?.['required'] && emailInput.touched) {
+        <mat-error>
+          Email is required
+        </mat-error>
+      }
+
+      @if (emailInput.errors?.['email'] && emailInput.touched) {
+        <mat-error>
+          Enter a valid email address
+        </mat-error>
+      }
+
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+
+      <input
+        matInput
+        type="tel"
+        name="phoneNumber"
+        [(ngModel)]="phoneNumber"
+        required
+        #phoneInput="ngModel"
+      >
+
+      @if (phoneInput.invalid && phoneInput.touched) {
+        <mat-error>
+          Phone Number is required
+        </mat-error>
+      }
+
+    </mat-form-field>
+
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="userForm.invalid">
+
+      Submit
+
+    </button>
+
+  </form>
+
+</mat-card>
