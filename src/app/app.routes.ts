@@ -1,19 +1,23 @@
 import { Routes } from '@angular/router';
-import { UserForm } from './user-form/user-form';
-import { UserDetails } from './user-details/user-details';
+import { Signup } from './signup/signup';
+import { RegistrationConfirmation } from './registration-confirmation/registration-confirmation';
 
 export const routes: Routes = [
+
   {
     path: '',
-    redirectTo: 'user-form',
+    redirectTo: 'signup',
     pathMatch: 'full'
   },
+
   {
-    path: 'user-form',
-    component: UserForm
+    path: 'signup',
+    component: Signup
   },
+
   {
-    path: 'user-details',
-    component: UserDetails
+    path: 'registration-confirmation/:id',
+    component: RegistrationConfirmation
   }
+
 ];

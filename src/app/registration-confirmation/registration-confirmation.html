@@ -1,0 +1,50 @@
+<div class="confirmation-container">
+
+  <div class="confirmation-card">
+
+    <div class="success-icon">
+      ✓
+    </div>
+
+    <h1>Registration Successful!</h1>
+
+    <p class="welcome" *ngIf="user">
+      Welcome "{{ user.first_name }}"
+    </p>
+
+    <p class="message">
+      Your account has been successfully created.
+    </p>
+
+    <div class="details" *ngIf="user">
+
+      <div class="detail-row">
+        <span>First Name</span>
+        <strong>{{ user.first_name }}</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Last Name</span>
+        <strong>{{ user.last_name }}</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Email</span>
+        <strong>{{ user.email }}</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Phone</span>
+        <strong>{{ user.phone }}</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Pincode</span>
+        <strong>{{ user.pincode }}</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
